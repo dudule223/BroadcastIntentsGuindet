@@ -25,7 +25,7 @@ public class GlobalBroadcastReceiver extends BroadcastReceiver {
             int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             float battery = (level / (float)scale) * 100;
 
-            if(20 - battery == 0)
+            if(battery < 20)
             {
                 Toast toast = Toast.makeText(context, "Batterie : " + Math.round(battery) + "%", Toast.LENGTH_SHORT);
                 toast.show();
